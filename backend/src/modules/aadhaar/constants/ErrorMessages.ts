@@ -1,4 +1,4 @@
-export const ERROR_MESSAGES = {
+export const ErrorMessages = {
   ONLY_IMAGES_ALLOWED: "Only image files are allowed!",
   FILE_SIZE_EXCEEDED: "File size exceeded the limit!",
   UPLOAD_FAILED: "Failed to upload file to Cloudinary.",

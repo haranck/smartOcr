@@ -1,4 +1,5 @@
-import { HttpException, HttpStatus } from "@nestjs/common";
+import { HttpException } from "@nestjs/common";
+import { HttpStatus } from "../constants/HttpStatus";
 
 export class AppError extends HttpException {
     constructor(message: string, statusCode: HttpStatus) {
