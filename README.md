@@ -10,6 +10,7 @@ SmartOCR is a high-performance, production-ready Aadhaar card data extraction sy
 ## 🚀 Key Features
 
 - **High-Accuracy OCR**: Integrated with [OCR.space API](https://ocr.space/) for robust text recognition.
+- **Dual-Side Processing**: Simultaneously extracts and validates data from both the front and back of Aadhaar cards.
 - **Image Optimization**: Automatic image resizing and quality adjustment using `sharp` to ensure optimal API performance.
 - **Data Validation**: Sophisticated parsing logic to extract specific fields like Aadhaar number, DOB, and Address using Regex and NLP patterns.
 - **Responsive UI**: A modern, dark-themed React frontend with real-time feedback and toast notifications.
