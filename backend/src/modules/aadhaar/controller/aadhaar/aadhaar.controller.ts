@@ -37,9 +37,6 @@ export class AadhaarController {
         const frontPath = files.frontImage[0].path;
         const backPath = files.backImage[0].path;
 
-        console.log("--- New Aadhaar Scan Request ---");
-        console.log("Front Image received:", files.frontImage[0].originalname, "->", frontPath);
-        console.log("Back Image received:", files.backImage[0].originalname, "->", backPath);
 
         return this.aadhaarService.processAadhaar(frontPath, backPath);
     }

@@ -7,6 +7,7 @@ export const AadhaarDataSchema = z.object({
   aadhaarNumber: z.string().default("Unknown"),
   address: z.string().default("Unknown"),
   pincode: z.string().default("Unknown"),
+  allAadhaarNumbers: z.array(z.string()).optional(),
 });
 
 export type AadhaarData = z.infer<typeof AadhaarDataSchema>;

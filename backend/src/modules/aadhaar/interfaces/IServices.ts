@@ -8,11 +8,16 @@ export interface AadhaarData {
   allAadhaarNumbers?: string[];
 }
 
+export interface AadhaarResponse {
+  success: boolean;
+  data: AadhaarData;
+}
+
 export interface IOCRService {
   processImage(imagePath: string): Promise<string>;
   parseData(text: string): AadhaarData;
 }
 
 export interface IAadhaarService {
-  processAadhaar(frontPath: string, backPath: string): Promise<any>;
+  processAadhaar(frontPath: string, backPath: string): Promise<AadhaarResponse>;
 }
