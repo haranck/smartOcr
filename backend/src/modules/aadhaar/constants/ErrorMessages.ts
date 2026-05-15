@@ -10,6 +10,7 @@ export const ErrorMessages = {
   DUPLICATE_IMAGES: "Front and back images appear to be the same.",
   FRONT_BACK_MISMATCH_SLOT_FRONT: "Front slot contains back side image.",
   FRONT_BACK_MISMATCH_SLOT_BACK: "Back slot contains front side image.",
+  IMAGES_REQUIRED: "Both front and back images of Aadhaar are required.",
+  OCR_FAILED: "OCR Processing failed.",
+  UNKNOWN_ERROR: "An unknown error occurred during OCR processing.",
 };
-
-

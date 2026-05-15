@@ -8,12 +8,14 @@ import {
 import { FileFieldsInterceptor } from "@nestjs/platform-express";
 import { AadhaarService } from "../../services/aadhaar/AadhaarService";
 import { uploadConfig } from "../../middleware/upload.midlleware";
+import { ROUTES } from "../../constants/Routes";
+import { ErrorMessages } from "../../constants/ErrorMessages";
 
-@Controller("aadhaar")
+@Controller(ROUTES.AADHAAR.BASE)
 export class AadhaarController {
     constructor(private readonly aadhaarService: AadhaarService) { }
 
-    @Post("scan")
+    @Post(ROUTES.AADHAAR.SCAN)
     @UseInterceptors(
         FileFieldsInterceptor(
             [
@@ -31,7 +33,7 @@ export class AadhaarController {
         }
     ) {
         if (!files?.frontImage?.[0] || !files?.backImage?.[0]) {
-            throw new BadRequestException("Both front and back images of Aadhaar are required.");
+            throw new BadRequestException(ErrorMessages.IMAGES_REQUIRED);
         }
 
         const frontPath = files.frontImage[0].path;

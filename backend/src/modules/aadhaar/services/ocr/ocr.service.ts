@@ -4,6 +4,7 @@ import FormData from "form-data";
 import sharp from "sharp";
 import { ENV } from "../../config/env.config";
 import { AadhaarData, IOCRService } from "../../interfaces/IServices";
+import { ErrorMessages } from "../../constants/ErrorMessages";
 
 interface OcrSpaceResponse {
     ParsedResults?: { ParsedText: string }[];
@@ -32,7 +33,7 @@ export class OcrService implements IOCRService {
             });
 
             if (data.IsErroredOnProcessing) {
-                throw new Error(data.ErrorMessage[0]);
+                throw new Error(data.ErrorMessage[0] || ErrorMessages.OCR_FAILED);
             }
 
             return data.ParsedResults?.[0]?.ParsedText || '';
@@ -44,7 +45,7 @@ export class OcrService implements IOCRService {
             if (error instanceof Error) {
                 throw error;
             }
-            throw new Error('An unknown error occurred during OCR processing');
+            throw new Error(ErrorMessages.UNKNOWN_ERROR);
         }
     }
 
