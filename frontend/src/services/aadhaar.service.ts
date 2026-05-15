@@ -24,7 +24,7 @@ export const aadhaarService = {
         formData.append("backImage", backFile);
 
         const response = await axiosInstance.post<{ success: boolean; data: AadhaarScanResult }>(
-            "/aadhaar/scan", 
+            "aadhaar/scan", 
             formData,
             {
                 headers: {
