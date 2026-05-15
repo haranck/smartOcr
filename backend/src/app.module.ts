@@ -4,4 +4,4 @@ import { AadhaarModule } from './modules/aadhaar/aadhaar.module';
 @Module({
   imports: [AadhaarModule],
 })
-export class AppModule {}
+export class AppModule { }
