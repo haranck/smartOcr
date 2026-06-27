@@ -13,7 +13,6 @@ export const useAadhaarOCR = () => {
             return;
         }
 
-        // 1. Duplicate Check: Front and Back should not be the same file
         if (frontImage.name === backImage.name && frontImage.size === backImage.size) {
             toast.error("You have uploaded the same image for both sides. Please upload the front and back separately.");
             return;

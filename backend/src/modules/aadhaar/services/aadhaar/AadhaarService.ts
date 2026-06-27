@@ -75,7 +75,7 @@ export class AadhaarService implements IServices.IAadhaarService {
             };
 
             const hasMatch = backData.allAadhaarNumbers?.some((num: string) => isFuzzyMatch(frontClean, num)) || 
-                             isFuzzyMatch(frontClean, backClean);
+                    isFuzzyMatch(frontClean, backClean);
 
             if (
                 frontData.aadhaarNumber !== 'Unknown' &&

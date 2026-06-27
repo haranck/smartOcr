@@ -1,8 +1,7 @@
 import axios from "axios";
-
+ 
 let BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-// Fail-safe: Ensure BASE_URL ends with /api/ if not already present
 if (BASE_URL && !BASE_URL.includes('/api')) {
     BASE_URL = BASE_URL.endsWith('/') ? `${BASE_URL}api/` : `${BASE_URL}/api/`;
 } else if (BASE_URL && !BASE_URL.endsWith('/')) {

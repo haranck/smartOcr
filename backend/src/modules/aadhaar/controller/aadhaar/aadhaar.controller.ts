@@ -39,7 +39,6 @@ export class AadhaarController {
         const frontPath = files.frontImage[0].path;
         const backPath = files.backImage[0].path;
 
-
         return this.aadhaarService.processAadhaar(frontPath, backPath);
     }
 }
