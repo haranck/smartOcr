@@ -9,6 +9,12 @@ import { OcrService } from './services/ocr/ocr.service';
 @Module({
   controllers: [AadhaarController],
 
-  providers: [AadhaarService, OcrService],
+  providers: [
+    {
+      provide: 'IAadhaarService',
+      useClass: AadhaarService,
+    },
+    OcrService
+  ],
 })
 export class AadhaarModule {}

@@ -4,16 +4,17 @@ import {
     UseInterceptors,
     UploadedFiles,
     BadRequestException,
+    Inject,
 } from "@nestjs/common";
 import { FileFieldsInterceptor } from "@nestjs/platform-express";
-import { AadhaarService } from "../../services/aadhaar/AadhaarService";
+import type { IAadhaarService } from "../../interfaces/IServices";
 import { uploadConfig } from "../../middleware/upload.midlleware";
 import { ROUTES } from "../../constants/Routes";
 import { ErrorMessages } from "../../constants/ErrorMessages";
 
 @Controller(ROUTES.AADHAAR.BASE)
 export class AadhaarController {
-    constructor(private readonly aadhaarService: AadhaarService) { }
+    constructor(@Inject('IAadhaarService') private readonly aadhaarService: IAadhaarService) { }
 
     @Post(ROUTES.AADHAAR.SCAN)
     @UseInterceptors(
